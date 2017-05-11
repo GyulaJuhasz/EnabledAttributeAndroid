@@ -2,4 +2,5 @@
     <string name="app_name">EnabledAttribute</string>
     <string name="write_something">Write something</string>
     <string name="toggle">TOGGLE</string>
+    <string name="should_be_disabled_by_default">Should be disabled by default</string>
 </resources>

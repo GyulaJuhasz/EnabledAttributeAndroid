@@ -4,6 +4,7 @@ import com.gyulajuhasz.example.enabledattribute.R;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -22,7 +23,7 @@ public class ToggleEditText extends LinearLayout {
             new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    updateState();
+                    setEnabled(isChecked);
                 }
             };
 
@@ -41,15 +42,14 @@ public class ToggleEditText extends LinearLayout {
         checkBox = (CheckBox) findViewById(R.id.toggle_edit_text_check_box);
         editText = (EditText) findViewById(R.id.toggle_edit_text_edit_text);
         checkBox.setOnCheckedChangeListener(onCheckedChangeListener);
-        updateState();
-    }
-
-    private void updateState() {
-        setEnabled(checkBox.isChecked());
+        Log.v("ToggleEditText", "Enabled: " + isEnabled());
     }
 
     @Override
     public void setEnabled(boolean enabled) {
+        if (enabled == isEnabled()) {
+            return;
+        }
         super.setEnabled(enabled);
         editText.setEnabled(enabled);
         checkBox.setOnCheckedChangeListener(null);

@@ -14,6 +14,16 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.gyulajuhasz.example.enabledattribute.view.CustomEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:hint="@string/should_be_disabled_by_default"
+        app:layout_constraintBottom_toTopOf="@+id/main_activity_toggle_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_activity_toggle_edit_text" />
+
     <Button
         android:id="@+id/main_activity_toggle_button"
         android:layout_width="match_parent"

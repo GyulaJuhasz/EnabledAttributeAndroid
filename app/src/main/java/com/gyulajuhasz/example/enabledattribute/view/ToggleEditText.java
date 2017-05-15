@@ -3,6 +3,7 @@ package com.gyulajuhasz.example.enabledattribute.view;
 import com.gyulajuhasz.example.enabledattribute.R;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -42,6 +43,12 @@ public class ToggleEditText extends LinearLayout {
         checkBox = (CheckBox) findViewById(R.id.toggle_edit_text_check_box);
         editText = (EditText) findViewById(R.id.toggle_edit_text_edit_text);
         checkBox.setOnCheckedChangeListener(onCheckedChangeListener);
+
+        final TypedArray typedArray =
+                context.obtainStyledAttributes(attrs, R.styleable.ToggleEditText, defStyleAttr, 0);
+        setEnabled(typedArray.getBoolean(R.styleable.ToggleEditText_android_enabled, isEnabled()));
+        typedArray.recycle();
+
         Log.v("ToggleEditText", "Enabled: " + isEnabled());
     }
 

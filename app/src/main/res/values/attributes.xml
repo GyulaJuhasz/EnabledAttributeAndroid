@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Attributes for the ToogleEditText widget. -->
+    <declare-styleable name="ToggleEditText">
+        <!-- Reusing android:enabled attribute. -->
+        <attr name="android:enabled" />
+    </declare-styleable>
+</resources>
